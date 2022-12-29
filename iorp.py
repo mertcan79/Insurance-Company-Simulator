@@ -47,7 +47,7 @@ class Position:
 
 
 class Stock(Asset):
-    def __init__(self, ticker: str, market_value: float, dividend_yield: float) -> None:
+    def __init__(self, ticker: str, market_value: float, dividend_yield: float = 0) -> None:
         """Initialize a Stock with a ticker, market value, and dividend yield.
 
         Parameters:
@@ -163,7 +163,7 @@ class IORP:
         # Calculate the market value of the asset based on its type
         if isinstance(asset, Stock):
             # For stocks, use the current market price and number of shares
-            return asset.market_price * asset.num_shares
+            return asset.market_price * 50
         elif isinstance(asset, Bond):
             # For bonds, use the current market price and face value
             return asset.market_price * asset.face_value
@@ -208,19 +208,19 @@ class IORP:
         net_market_value = self.calculate_market_value()
         net_delta = self.calculate_net_delta()
 
-        # Calculate the amount to invest in options based on the net delta and the delta hedge ratio
+        # Calculate the amount to invest in stocks based on the net delta and the delta hedge ratio
         max_option_investment = net_market_value * self.hedge_ratio
 
-        # Calculate the amount to invest in options based on the net delta and the delta hedge ratio,
+        # Calculate the amount to invest in stocks based on the net delta and the delta hedge ratio,
         # but limit it to the maximum option investment
         option_investment = min(abs(net_delta) * self.hedge_ratio, max_option_investment)
 
-        # If the net delta is positive, sell options to offset the delta
+        # If the net delta is positive, sell stocks to offset the delta
         if net_delta > 0:
-            print(f"Selling {option_investment:.2f} worth of options to offset positive delta")
-        # If the net delta is negative, buy options to offset the delta
+            print(f"Selling {option_investment:.2f} worth of stocks to offset positive delta")
+        # If the net delta is negative, buy stocks to offset the delta
         elif net_delta < 0:
-            print(f"Buying {option_investment:.2f} worth of options to offset negative delta")
+            print(f"Buying {option_investment:.2f} worth of stocks to offset negative delta")
         # If the net delta is zero, no action is needed
         else:
             print("Net delta is zero. No action needed.")
@@ -267,13 +267,11 @@ if __name__ == "__main__":
     print(f"The market value of the position is {market_value:.2f}")
 
     # Create some assets for the IORP to hold
-    stocks = [Asset("AAPL", 100.00), Asset("GOOG", 200.00), Asset("MSFT", 50.00)]
-    bonds = [Asset("US Treasury", 50.00), Asset("Corporate Bond", 75.00)]
-    real_estate = [Asset("Commercial Property", 250.00), Asset("Residential Property", 150.00)]
+    stocks = [Stock("AAPL", 100.00), Stock("GOOG", 200.00), Stock("MSFT", 50.00)]
 
     # Initialize an IORP with a solvency ratio of 0.9, an asset diversification of 0.8,
     # and an industry risk of 0.6, and the assets created above
-    iorp = IORP(assets=stocks, solvency_ratio=0.8, asset_diversification=0.7, industry_risk=0.9, total_assets=10000000, total_liabilities=5000000, num_employees=1000, geographical_location="Europe", industry_sector="Finance", hedge_ratio=0.1)
+    iorp = IORP(name="IORP1", assets=stocks, solvency_ratio=0.8, asset_diversification=0.7, industry_risk=0.9, total_assets=10000000, total_liabilities=5000000, num_employees=1000, geographical_location="Europe", industry_sector="Finance", hedge_ratio=1.2)
 
     for stock in stocks:
         # Create a Position object for the stock with a quantity of 50
