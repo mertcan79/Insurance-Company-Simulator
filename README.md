@@ -27,8 +27,8 @@ Insurance company is providing customized reinsurance coverage for 262500.0 doll
 The reinsurance premium for IORP1 with a medium risk profile and 1000000 dollars of coverage is 100000.0 dollars.
 InsCo1 and IORP1 are investing 500000 dollars in bond.
 InsCo1 is working with IORP1 to develop and implement risk management strategies to mitigate market risks.
-InsCo1 is working with IORP2 to develop and implement risk management strategies to mitigate operational risks.
+InsCo1 is working with IORP2 to develop and implement risk management strategies to mitigate operational risks.*
 
-The IORP does not meet the solvency requirements of IORP II
+*The IORP does not meet the solvency requirements of IORP II
 InsCo1 is partnering with InsCo2 to share risk and potentially reduce the impact of investing in IORP1 with a high risk profile.
 InsCo1 is paying a premium of 100000 dollars to InsCo2 for this reinsurance coverage.*
