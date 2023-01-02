@@ -22,7 +22,8 @@ The interaction class between the two institutions is capable of:
 
 The results of an example insurance company simulation are as follows: 
 
-*- SCR of Acme Insurance: 192000000.0
+*
+- SCR of Acme Insurance: 192000000.0
 - MCR of Acme Insurance: 480000000.0
 - SCR stress test results for Acme Insurance: {'low_market_risk_scr': 96000000.0, 'high_market_risk_scr': 240000000.0, 'low_operational_risk_scr': 144000000.0, 'high_operational_risk_scr': 400000000.0}
 - Reinsurance terms updated for IORP ABC IORP with reinsurance amount 25000000.
@@ -33,7 +34,8 @@ The results of an example insurance company simulation are as follows:
 
 The results of an example IORP simulation are as follows: 
 
-*- The market value of the position is 2500.00
+*
+- The market value of the position is 2500.00
 - The NAV of the IORP is 350.00
 - Market value is above the stop-loss threshold. No action needed.
 - Selling 200 worth of stocks to offset positive delta*
