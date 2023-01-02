@@ -46,6 +46,6 @@ The results of an example interactions between insurer and IORP & SME are as fol
 ### SME INTERACTIONS ###
 The risk profile of the SME Acme Co is 0.30000000000000004
 The premium for the SME Acme Co is 20280.0
-### SME INTERACTIONS ###
+### IORP INTERACTIONS ###
 The annuity Premium 93887.49282676155
 Insurance company is providing customized reinsurance coverage for 7875.0 dollars to IORP ABC IORP.
